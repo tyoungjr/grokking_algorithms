@@ -6,7 +6,7 @@ int main(int argc, char **argv)
 {
     
     int list[5] = { 11, 34, 78, 101, 120 };
-    char item = NULL;
+    int item = 11;
 	
 	int size = ((sizeof list) / (sizeof list[0]));
 
@@ -29,7 +29,9 @@ int main(int argc, char **argv)
 	{
 		std::cout << item << " was found at " << result << " in the list" << std::endl;
 	}
-
+	char input = '0';
+	std::cout << "Press any key to continue" << std::endl;
+	std::cin >> input;
     return 0;
 }
 
@@ -46,7 +48,7 @@ int integer_binary_search( int list[], int item, int size_of_array)
 	 
 	while (low <= high)
 	{
-		mid = low + high;
+		mid = (low + high) / 2;
 		guess = list[mid];
 		if (guess == item)
 		{
